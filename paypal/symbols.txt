@@ -1,0 +1,7 @@
+USD=&#36;
+CAD=&#36;
+EUR=&#8364;
+INR=&#8377;
+JPY=&#65509;
+GBP=&pound;
+CNY=&yen;
