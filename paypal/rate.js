@@ -98,9 +98,9 @@ function saveRates() {
   fs.writeFileSync(ratesFile, context);
 }
 
-// returns currency symbol
+// returns currency symbol or empty string if symbol is not found
 function getSymbol(currency) {
-  if (currency.toUpperCase() in signs) {
+  if (typeof currency !== 'undefined' && currency.toUpperCase() in signs) {
     return signs[currency.toUpperCase()];
   } else {
     return '';
