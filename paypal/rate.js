@@ -41,7 +41,7 @@ function readFile(file, map) {
 function getRate(from, to, live, onSuccess, onError) {
   var fromto = (from + to).toUpperCase();
   // download
-  if (live || !rateTable[fromto]) {
+  if (live === true || !rateTable[fromto]) {
     downloadRate(fromto, 
       function(rate) {
         rateTable[fromto] = rate;
@@ -100,7 +100,9 @@ function saveRates() {
 
 // returns currency symbol or empty string if symbol is not found
 function getSymbol(currency) {
-  if (typeof currency !== 'undefined' && currency.toUpperCase() in signs) {
+  if (typeof currency !== 'undefined' 
+      && currency != null
+      && currency.toUpperCase() in signs) {
     return signs[currency.toUpperCase()];
   } else {
     return '';
